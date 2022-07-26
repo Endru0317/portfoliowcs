@@ -17,7 +17,7 @@ const Home = () => {
     <img
       src={logoTitle}
       style={{ paddingLeft: -10 }}
-      alt="JavaScript Developer Name, Web Developer Name"
+      alt="S"
     />,
     'o',
     'l',
