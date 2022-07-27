@@ -44,8 +44,10 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I am interested in front-end developer opportunities - however, I also would be eager to learn and work more on the back-end part. If you have other request or questions,
-            don't hesitate to contact me using the contact form below or reach out to me directly via Email.
+            I am interested in front-end developer opportunities - however, I
+            also would be eager to learn and work more on the back-end part. If
+            you have other request or questions, don't hesitate to contact me
+            using the contact form below or reach out to me directly via Email.
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>

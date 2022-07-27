@@ -12,7 +12,19 @@ const Portfolio = () => {
       image: 'https://i.imgur.com/I4ByOKx.png',
       name: 'Spice Guys',
       description:
-        'This is the first project that we did in small groups during the course',
+        'This is the first project that we did in small groups during the course! Here is a link for a figma demo:https://www.figma.com/proto/sTpiVTAuMYFUtQYGvINxFJ/Spice-Guys--Artsy-Portfolio-Template?node-id=29%3A100&scaling=min-zoom&page-id=24%3A396&starting-point-node-id=29%3A100&show-proto-sidebar=1'
+    },
+    {
+      image: 'https://imgur.com/lJQIH07.png',
+      name: 'Astro Boys',
+      description:
+        'This is the second project that we did in small groups during the course',
+    },
+    {
+      image: 'https://imgur.com/PSsH5nD.png',
+      name: 'find rubbish',
+      description:
+        'it was a Hackathon project that we implemented in a short time',
     },
   ])
 
