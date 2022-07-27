@@ -10,8 +10,9 @@ const Portfolio = () => {
   const [portfolio, setPortfolio] = useState([
     {
       image: 'https://i.imgur.com/I4ByOKx.png',
-      name: 'test',
-      description: 'test',
+      name: 'Spice Guys',
+      description:
+        'This is the first project that we did in small groups during the course',
     },
   ])
 
