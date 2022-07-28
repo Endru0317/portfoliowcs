@@ -27,6 +27,7 @@ const Contact = () => {
       method: 'POST',
       body: JSON.stringify({ name, email, subject, message }),
     })
+    document.getElementById('form').reset()
   }
 
   return (
@@ -47,7 +48,7 @@ const Contact = () => {
             using the contact form below or reach out to me directly via Email.
           </p>
           <div className="contact-form">
-            <form onSubmit={submit} ref={form}>
+            <form onSubmit={submit} ref={form} id="form">
               <ul>
                 <li className="half">
                   <input
