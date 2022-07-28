@@ -9,6 +9,10 @@ import './index.scss'
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     setTimeout(() => {
@@ -16,20 +20,13 @@ const Contact = () => {
     }, 3000)
   }, [])
 
-  const sendEmail = (e) => {
+  const submit = (e) => {
     e.preventDefault()
-
-    emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          window.location.reload(false)
-        },
-        () => {
-          alert('Failed to send the message, please try again')
-        }
-      )
+    console.log(form)
+    fetch(`https://hooks.zapier.com/hooks/catch/13042658/bq4du1z/`, {
+      method: 'POST',
+      body: JSON.stringify({ name, email, subject, message }),
+    })
   }
 
   return (
@@ -50,10 +47,18 @@ const Contact = () => {
             using the contact form below or reach out to me directly via Email.
           </p>
           <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
+            <form onSubmit={submit} ref={form}>
               <ul>
                 <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
+                  <input
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    required
+                    onChange={(e) => {
+                      setName(e.target.value)
+                    }}
+                  />
                 </li>
                 <li className="half">
                   <input
@@ -61,6 +66,9 @@ const Contact = () => {
                     type="email"
                     name="email"
                     required
+                    onChange={(e) => {
+                      setEmail(e.target.value)
+                    }}
                   />
                 </li>
                 <li>
@@ -69,6 +77,9 @@ const Contact = () => {
                     type="text"
                     name="subject"
                     required
+                    onChange={(e) => {
+                      setSubject(e.target.value)
+                    }}
                   />
                 </li>
                 <li>
@@ -76,6 +87,9 @@ const Contact = () => {
                     placeholder="Message"
                     name="message"
                     required
+                    onChange={(e) => {
+                      setMessage(e.target.value)
+                    }}
                   ></textarea>
                 </li>
                 <li>
@@ -95,12 +109,12 @@ const Contact = () => {
           <span>endru0317@gmail.com</span>
         </div>
         <div className="map-wrap">
-          <MapContainer center={[52.55278, 14.3588225]} zoom={13}>
+          {/*         <MapContainer center={[52.55278, 14.3588225]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[52.55278, 13.3588225]}>
               <Popup>Andras lives here, come over for a cup of coffee :)</Popup>
             </Marker>
-          </MapContainer>
+          </MapContainer> */}
         </div>
       </div>
       <Loader type="pacman" />

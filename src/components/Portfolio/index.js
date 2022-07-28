@@ -24,7 +24,7 @@ const Portfolio = () => {
       image: 'https://imgur.com/PSsH5nD.png',
       name: 'find rubbish',
       description:
-        'it was a Hackathon project that we implemented in a short time',
+        'It was a Hackathon project that we implemented in a short time',
     },
   ])
 
